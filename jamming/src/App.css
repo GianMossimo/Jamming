@@ -1,26 +1,62 @@
 /* Font Family */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-* {
+/* Sizing */
+.app {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Lato, sans-serif;
-    font-size: 16px;
 }
 
+/* Component Positioning */
 .header,
 .search-bar,
+.search-result-list,
 .playlist {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
-    padding: 0.5rem;
 }
 
+/* Header */
 .header {
     flex-flow: column;
-    line-height: 1rem;
-    font-size: 2rem;
+    background-color: black;
+    color: white;
+
+}
+
+.header h1,
+.header span {
+    font-size: 3rem;
+}
+
+.header span {
+    color: white;
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: grey;
+    height: 3rem;
+    display: flex;
+    flex-flow: column;
+}
+
+/* Search Results */
+.search-result-list {
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    width: 100%;
+    height: 15rem;
+    background-color: grey;
+}
+
+.search-result {
+    padding: 1rem 2rem;
+}
+
+.search-result:hover {
+    color: purple;
 }

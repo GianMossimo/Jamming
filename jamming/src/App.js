@@ -1,5 +1,10 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
+
+// Component Imports
+import SearchBar from './SearchBar';
+import SearchResultList from './SearchResultList';
+import Header from './Header';
 
 function Track({ Track }) {
   return (
@@ -27,48 +32,19 @@ function Artist({ Artist }) {
   );
 }
 
-function Playlist({ Track, Artist} ) {
-  return (
-    <div className='playlist'>
-      <label>Save to Playlist</label>
-      <tr>
-        <td>{SONGS.artist}</td>
-        <td>{SONGS.name}</td>
-      </tr>
-    </div>
-  );
-}
-
-function SearchBar({ query }) {
-  return (
-    <div className='search-bar'>
-      <form>
-        <input
-          placeholder='Search for song or artist'
-        />
-      </form>
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <div className='header'>
-      <h1>Jamming</h1>
-    </div>
-  );
-}
-
 export default function App() {
+
+  const [results, setResults] = useState([]);
+
   return(
     <div className='app'>
       <Header />
-      <SearchBar />
-      <Playlist />
+      <SearchBar 
+        setResults = {setResults}
+      />
+      <SearchResultList
+        results = {results}
+      />
     </div>
   );
 }
-
-const SONGS = [
-  {name: "Three Wishes", artist: "Dance Gavin Dance"}
-];
