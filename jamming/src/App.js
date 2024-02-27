@@ -2,49 +2,61 @@ import './App.css';
 import React, { useState } from 'react';
 
 // Component Imports
-import SearchBar from './SearchBar';
-import SearchResultList from './SearchResultList';
-import Header from './Header';
-
-function Track({ Track }) {
-  return (
-    <div className='track'>
-      <label>
-        Track:
-        <p>
-          {Track.name};
-        </p>
-      </label>
-    </div>
-  );
-}
-
-function Artist({ Artist }) {
-  return (
-    <div className='artist'>
-      <label>
-        Artist:
-        <p>
-          {Artist.name};
-        </p>
-      </label>
-    </div>
-  );
-}
+import SearchBar from './Components/SearchBar';
+import SearchResults from './Components/SearchResults';
+import Header from './Components/Header';
+import Playlist from './Components/Playlist';
 
 export default function App() {
 
-  const [results, setResults] = useState([]);
+  // For Search Results
+  const [searchResults, setSearchResults] = useState({
+    name: "Three Wishes",
+    artist: "Dance Gavin Dance",
+    album: "Afterburner"
+  });
+
+  // For Playlist
+  const [playlistName, setPlaylistName] = useState('Example Playlist Name');
+  const [playlistTracks, setPlaylistTracks] = useState([
+    {
+      name: "Three Wishes",
+      artist: "Dance Gavin Dance",
+      album: "Afterburner",
+    },
+    {
+      name: "Lyrics Lie",
+      artist: "Dance Gavin Dance",
+      album: "Afterburner"
+    },
+    {
+      name: "Nothing Shameful",
+      artist: "Dance Gavin Dance",
+      album: "Afterburner"
+    }
+  ]);
+
+  function addTrack(track) {
+
+  }
 
   return(
     <div className='app'>
-      <Header />
-      <SearchBar 
-        setResults = {setResults}
-      />
-      <SearchResultList
-        results = {results}
-      />
+      <div>
+        <Header />
+      </div>
+      <div>
+        <SearchBar />
+        <SearchResults
+          userSearchResults = {searchResults}
+        />
+      </div>
+      <div>
+        <Playlist 
+          playlistName = {playlistName}
+          playlistTracks = {playlistTracks}
+        />
+      </div>
     </div>
   );
 }
