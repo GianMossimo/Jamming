@@ -1,0 +1,13 @@
+.search-bar {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: aqua;
+    width: 50vw;
+    height: 100vh;
+}
+
+.search-input {
+    padding: 0.5rem;
+    margin: 1rem;
+}

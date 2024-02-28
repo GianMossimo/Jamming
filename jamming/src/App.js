@@ -37,25 +37,44 @@ export default function App() {
   ]);
 
   function addTrack(track) {
+    const existingTrack = playlistTracks.find((track) => track.id === track.id);
+    const newTrack = playlistTracks.concat(track);
 
+    if (existingTrack) {
+      return 'Song is already in playlist';
+    } else {
+      setPlaylistTracks(newTrack);
+    }
+  }
+
+  function removeTrack(track) {
+    const existingTrack = playlistTracks.filter((track) => track.id !== track.id);
+    setPlaylistTracks(existingTrack);
+  }
+
+  function updatePlaylistName(name) {
+    setPlaylistName(name);
   }
 
   return(
     <div className='app'>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <SearchBar />
-        <SearchResults
-          userSearchResults = {searchResults}
-        />
-      </div>
-      <div>
-        <Playlist 
-          playlistName = {playlistName}
-          playlistTracks = {playlistTracks}
-        />
+      <Header />
+      <div className='split'>
+        <div>
+          <SearchBar />
+          <SearchResults
+            userSearchResults = {searchResults}
+            onAdd = {addTrack}
+          />
+        </div>
+        <div>
+          <Playlist 
+            playlistName = {playlistName}
+            playlistTracks = {playlistTracks}
+            onRemove = {removeTrack}
+            onNameChange = {updatePlaylistName}
+          />
+        </div>
       </div>
     </div>
   );

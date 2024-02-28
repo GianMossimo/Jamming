@@ -1,0 +1,12 @@
+.playlist {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.playlist-input {
+    padding: 0.5rem;
+    margin: 1rem;
+}
