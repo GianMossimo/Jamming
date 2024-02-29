@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SearchResult from './SearchResults';
 import Tracklist from './Tracklist';
 
 export default function SearchResults(props) {
