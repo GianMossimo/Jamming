@@ -7,11 +7,24 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.header h1,
-.header span {
-    font-size: 4rem;
+.header {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .header span {
-    color: purple;
+    transition: 0.3s;
+    color: #D52685;
+}
+
+.header span:hover {
+    margin: 0.5rem;
+    text-shadow:    0 0 10px #D52685,
+                    0 0 20px #D52685,
+                    0 0 40px #D52685,
+                    0 0 80px #D52685,
+                    0 0 120px #D52685,
+                    0 0 160px #D52685;
 }

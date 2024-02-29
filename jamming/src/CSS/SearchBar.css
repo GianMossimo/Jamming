@@ -7,17 +7,21 @@
 }
 
 .search-input {
-    padding: 0.5rem;
+    color: white;
+    padding: 1rem 1rem 0.5rem;
     margin: 1rem;
-    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
-    border-color: transparent;
-    background-color: rgba(225, 225, 225, 0.3);
+    border: transparent;
+    border-bottom: solid 2px white;
+    background-color: transparent;
     transition: all ease-in-out 0.4s;
+    width: 20vw;
 }
 
-.search-input:hover,
-.search-input:active {
-    background-color: white;
-    color: black;
+.search-input:hover {
+    color: white;
+    width: 21vw;
+    padding: 1.1rem 1.1rem 0.6rem;
 }
