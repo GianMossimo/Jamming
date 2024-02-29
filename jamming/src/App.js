@@ -10,11 +10,23 @@ import Playlist from './Components/Playlist';
 export default function App() {
 
   // For Search Results
-  const [searchResults, setSearchResults] = useState({
+  const [searchResults, setSearchResults] = useState([
+    {
     name: "Three Wishes",
     artist: "Dance Gavin Dance",
     album: "Afterburner"
-  });
+    },
+    {
+      name: "Three Wishes",
+      artist: "Dance Gavin Dance",
+      album: "Afterburner"
+    },
+    {
+      name: "Three Wishes",
+      artist: "Dance Gavin Dance",
+      album: "Afterburner"
+    }
+  ]);
 
   // For Playlist
   const [playlistName, setPlaylistName] = useState('Example Playlist Name');

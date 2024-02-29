@@ -7,9 +7,15 @@ export default function Track(props) {
 
     function renderAction() {
         if (props.removal) {
-            <button onClick = {passTrackToRemove}>"-"</button>
+            <button 
+                onClick = {passTrackToRemove}
+                className = "plus-minus"
+            >"-"</button>
         } else {
-            <button onClick = {passTrack}>"+"</button>
+            <button 
+                onClick = {passTrack}
+                className = "plus-minus"
+            >"+"</button>
         }
     }
 

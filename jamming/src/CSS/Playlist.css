@@ -4,9 +4,21 @@
     align-items: center;
     width: 50vw;
     height: 100vh;
+    color: white;
 }
 
 .playlist-input {
     padding: 0.5rem;
     margin: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: rgba(225, 225, 225, 0.3);
+    transition: all ease-in-out 0.4s;
+}
+
+.playlist-input:hover,
+.playlist-input:active {
+    background-color: white;
+    color: black;
 }
