@@ -12,6 +12,12 @@
     letter-spacing: 0.3rem;
     text-transform: uppercase;
     cursor: pointer;
+    text-shadow:    0 0 5px #FFF,
+                    0 0 5px #D52685,
+                    0 0 40px #D52685,
+                    0 0 80px #D52685,
+                    0 0 5px #D52685,
+                    0 0 5px #FFF;
 }
 
 .header span {

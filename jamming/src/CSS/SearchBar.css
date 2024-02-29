@@ -14,7 +14,7 @@
     font-weight: bold;
     cursor: pointer;
     border: transparent;
-    border-bottom: solid 2px white;
+    border-bottom: solid 2px #D52685;
     background-color: transparent;
     transition: all ease-in-out 0.4s;
     width: 20vw;
