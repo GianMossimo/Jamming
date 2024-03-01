@@ -6,47 +6,16 @@ import SearchBar from './Components/SearchBar';
 import SearchResults from './Components/SearchResults';
 import Header from './Components/Header';
 import Playlist from './Components/Playlist';
+import { Spotify } from './Spotify API/Spotify';
 
 export default function App() {
 
   // For Search Results
-  const [searchResults, setSearchResults] = useState([
-    {
-    name: "Three Wishes",
-    artist: "Dance Gavin Dance",
-    album: "Afterburner"
-    },
-    {
-      name: "Three Wishes",
-      artist: "Dance Gavin Dance",
-      album: "Afterburner"
-    },
-    {
-      name: "Three Wishes",
-      artist: "Dance Gavin Dance",
-      album: "Afterburner"
-    }
-  ]);
+  const [searchResults, setSearchResults] = useState();
 
   // For Playlist
   const [playlistName, setPlaylistName] = useState('Example Playlist Name');
-  const [playlistTracks, setPlaylistTracks] = useState([
-    {
-      name: "Three Wishes",
-      artist: "Dance Gavin Dance",
-      album: "Afterburner",
-    },
-    {
-      name: "Lyrics Lie",
-      artist: "Dance Gavin Dance",
-      album: "Afterburner"
-    },
-    {
-      name: "Nothing Shameful",
-      artist: "Dance Gavin Dance",
-      album: "Afterburner"
-    }
-  ]);
+  const [playlistTracks, setPlaylistTracks] = useState();
 
   function addTrack(track) {
     const existingTrack = playlistTracks.find((track) => track.id === track.id);
