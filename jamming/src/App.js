@@ -68,12 +68,22 @@ export default function App() {
     setPlaylistName(name);
   }
 
+  function savePlaylist() {
+    const TrackURIs = playlistTracks.map((track) => track.uri);
+  }
+
+  function search(term) {
+    console.log(term);
+  }
+
   return(
     <div className='app'>
       <Header />
       <div className='split'>
         <div>
-          <SearchBar />
+          <SearchBar 
+            onSearch = {search}
+          />
           <SearchResults
             userSearchResults = {searchResults}
             onAdd = {addTrack}
@@ -85,6 +95,7 @@ export default function App() {
             playlistTracks = {playlistTracks}
             onRemove = {removeTrack}
             onNameChange = {updatePlaylistName}
+            onSave = {savePlaylist}
           />
         </div>
       </div>

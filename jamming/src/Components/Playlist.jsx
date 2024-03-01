@@ -20,8 +20,10 @@ export default function Playlist(props) {
                 onRemove = {props.onRemove} 
                 isRemoval = {true}
             />
-            <button className = "playlist-button"> 
-                <span></span>
+            <button 
+            className = "playlist-button"
+            onClick = {props.onSave}
+            ><span></span>
                 Save to Spotify
             </button>
         </div>
