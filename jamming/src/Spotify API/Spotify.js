@@ -3,7 +3,7 @@ import React from "react";
 let userAccessToken;
 
 const clientID = '8f0370d8bc9b47e1b982db349ddcb2c6';
-const redirectURI = `http://locolhost:3000`;
+const redirectURI = `http://localhost:3000`;
 
 const Spotify = {
     getAccessToken() {
@@ -40,10 +40,10 @@ const Spotify = {
                         console.error('Response error!');
                     }
                     return jsonResponse.tracks.items.map(t => ({
-                        id = t.id,
-                        name = t.name,
-                        artist = t.artist[0].name,
-                        album = t.album.name,
+                        id: t.id,
+                        name: t.name,
+                        artist: t.artist[0].name,
+                        album: t.album.name,
                         uri: t.uri
                     }));
                 });
