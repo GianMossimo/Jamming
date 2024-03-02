@@ -41,7 +41,7 @@ export default function App() {
     Spotify.savePlaylist(playlistName, TrackURIs).then((t) => {
       setPlaylistName('New Playlist')
       setPlaylistTracks([])
-    })
+    });
     const TrackURIs = playlistTracks.map((track) => track.uri);
   }
 

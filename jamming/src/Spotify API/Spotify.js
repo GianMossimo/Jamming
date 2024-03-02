@@ -16,7 +16,7 @@ const Spotify = {
         // Second check for the access token
         if (token && expiry) {
             // Setting values for token and expiration time
-            userAccessToken = token[1];
+            const userAccessToken = token[1];
             const expiresIn = Number(expiry[1]);
 
             // Setting the access token to expire at the value for expiration time
@@ -34,9 +34,8 @@ const Spotify = {
 
     // Search method
     search(term) {
-        accessToken = Spotify.getAccessToken();
+        const accessToken = Spotify.getAccessToken();
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
-            method: GET,
             headers: { Authorization: `bearer ${accessToken}` },
         })
             .then((response) => response.json())
@@ -64,7 +63,7 @@ const Spotify = {
             .then((jsonResponse) => {
                 userId = jsonResponse.id
                 let playlistId;
-                return fetch(`https://api.spotify.com/v1/users/${user_id}/playlists`, { 
+                return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, { 
                     headers: header, 
                     method: 'post', 
                     body: jsonResponse.stringify({ name: name }), 
