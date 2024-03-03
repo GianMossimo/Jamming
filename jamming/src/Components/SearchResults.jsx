@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Tracklist from './Tracklist';
 
 export default function SearchResults(props) {
     return (
         <div className='search-results'>
             <Tracklist 
-                userSearchResults = {props.searchResults}
+                userSearchResults = {props.userSearchResults}
                 isRemoval = {false}
                 onAdd = {props.onAdd}
             />

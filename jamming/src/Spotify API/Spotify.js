@@ -3,7 +3,7 @@ import React from "react";
 let userAccessToken = "";
 
 const clientID = '8f0370d8bc9b47e1b982db349ddcb2c6';
-const redirectURI = `http://localhost:3000`;
+const redirectURI = `http://localhost:3000/`;
 
 const Spotify = {
     getAccessToken() {
@@ -36,7 +36,7 @@ const Spotify = {
     search(term) {
         const accessToken = Spotify.getAccessToken();
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
-            headers: { Authorization: `bearer ${accessToken}` },
+            headers: { Authorization: `Bearer ${accessToken}` },
         })
             .then((response) => response.json())
             .then((jsonResponse) => {
@@ -46,7 +46,7 @@ const Spotify = {
                 return jsonResponse.tracks.items.map((t) => ({
                     id: t.id,
                     name: t.name,
-                    artist: t.artist[0].name,
+                    artist: t.artists[0].name,
                     album: t.album.name,
                     uri: t.uri,
                 }));

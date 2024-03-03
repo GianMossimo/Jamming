@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styles from '../CSS/SearchBar.css';
 
-export default  function SearchBar() {
+export default  function SearchBar(props) {
 
     const [term, setTerm] = useState('');
 
-    function passTerm(props) {
+    function passTerm() {
         props.onSearch(term);
     }
 
