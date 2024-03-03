@@ -30,9 +30,12 @@ export default function Track(props) {
     return (
         <div className="track">
             <div className="track-info">
-                <h3>{props.track.name}</h3>
-                <p>{props.track.artist} | {props.track.album}</p>
+                <h3 className="song">{props.track.name}</h3>
+                <p className = "album">{props.track.artist} | {props.track.album}</p>
             </div>
+            <button 
+                className = "plus"
+            >+</button>
             {renderAction()}
         </div>
     );

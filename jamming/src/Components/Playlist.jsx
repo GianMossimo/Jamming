@@ -15,17 +15,17 @@ export default function Playlist(props) {
                 placeholder = "Enter Playlist Name"
                 onNameChange = {handleNameChange}
             />
+            <button 
+                className = "playlist-button"
+                onClick = {props.onSave}
+            ><span></span>
+                Save to Spotify
+            </button>
             <Tracklist 
                 userSearchResults = {props.playlistTracks}
                 onRemove = {props.onRemove} 
                 isRemoval = {true}
             />
-            <button 
-            className = "playlist-button"
-            onClick = {props.onSave}
-            ><span></span>
-                Save to Spotify
-            </button>
         </div>
     );
 }

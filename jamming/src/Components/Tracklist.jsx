@@ -10,6 +10,7 @@ export default function Tracklist(props) {
         <div className="tracklist">
             {props.userSearchResults?.map((track) => (
                 <Track 
+                    className = 'track'
                     track = {track}
                     key = {track.id}
                     isRemoval = {props.isRemoval}

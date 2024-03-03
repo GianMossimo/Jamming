@@ -3,7 +3,7 @@
     flex-flow: column;
     align-items: center;
     width: 50vw;
-    height: 80vh;
+    height: 100vh;
     color: white;
 }
 
@@ -66,4 +66,9 @@
 .playlist-button:hover span:nth-child(1) {
     left: 100%;
     transition: 1s;
+}
+
+.dropdown {
+    display: flex;
+    height: 500px;
 }
