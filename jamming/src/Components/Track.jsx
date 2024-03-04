@@ -7,19 +7,23 @@ export default function Track(props) {
 
     function renderAction() {
         if (props.removal) {
-            <button 
-                onClick = {passTrackToRemove}
-                className = "plus-minus"
-            >"-"</button>
+            return (
+                <button 
+                    onClick = {passTrackToRemove}
+                    className = "plus-minus"
+                >-</button>
+            );
         } else {
-            <button 
-                onClick = {passTrack}
-                className = "plus-minus"
-            >"+"</button>
+            return (
+                <button 
+                    onClick = {passTrack}
+                    className = "plus-minus"
+                >+</button>
+            );
         }
     }
 
-    function passTrack(props) {
+    function passTrack() {
         props.onAdd(props.track)
     }
 
@@ -33,9 +37,9 @@ export default function Track(props) {
                 <h3 className="song">{props.track.name}</h3>
                 <p className = "album">{props.track.artist} | {props.track.album}</p>
             </div>
-            <button 
-                className = "plus"
-            >+</button>
+            <button
+                className = "plus-minus"
+            ></button>
             {renderAction()}
         </div>
     );

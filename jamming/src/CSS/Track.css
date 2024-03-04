@@ -16,7 +16,7 @@
     font-size: 1.2rem;    
 }
 
-.plus {
+.plus-minus {
     background-color: transparent;
     border: none;
     color: #D52685;
@@ -25,7 +25,7 @@
     transition: all ease-in 0.2s;
 }
 
-.plus:hover {
+.plus-minus:hover {
     text-shadow: 0 0 5px #D52685,
                 0 0 10px #D52685,
                 0 0 20px #D52685;

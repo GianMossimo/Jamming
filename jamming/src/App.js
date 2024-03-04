@@ -15,21 +15,22 @@ export default function App() {
 
   // For Playlist
   const [playlistName, setPlaylistName] = useState('Example Playlist Name');
-  const [playlistTracks, setPlaylistTracks] = useState();
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   function addTrack(track) {
-    const existingTrack = playlistTracks.find((track) => track.id === track.id);
+
+    const existingTrack = playlistTracks.find((t) => t.id === track.id);
     const newTrack = playlistTracks.concat(track);
 
     if (existingTrack) {
-      return 'Song is already in playlist';
+      console.log('Song is already in playlist');
     } else {
       setPlaylistTracks(newTrack);
     }
   }
 
   function removeTrack(track) {
-    const existingTrack = playlistTracks.filter((track) => track.id !== track.id);
+    const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
     setPlaylistTracks(existingTrack);
   }
 
@@ -37,15 +38,11 @@ export default function App() {
     setPlaylistName(name);
   }
 
-  function savePlaylist(trackUris) {
-    const TrackURIs = playlistTracks?.map((track) => track.uri);
-    return Spotify.savePlaylist(playlistName, TrackURIs)
-      .then(() => {
-      setPlaylistName('New Playlist')
-      setPlaylistTracks([]) 
-    })
-    .catch((error) => {
-      alert(error);
+  function savePlaylist() {
+    const trackURIs = playlistTracks?.map((t) => t.uri);
+    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+      updatePlaylistName('New Playlist');
+      setPlaylistTracks([]);
     })
   }
 
