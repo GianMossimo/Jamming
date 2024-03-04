@@ -54,11 +54,13 @@ const Spotify = {
     }, // getAccessToken function
 
     savePlaylist(name, trackUris) {
-        if (!name || !trackUris) return;
+        if (!name || !trackUris) {
+            throw new Error('Please provide a name');
+        } else {
         const aToken = Spotify.getAccessToken();
         const header = { Authorization: `Bearer ${aToken}` };
         let userId;
-        return fetch(`https://api.spotify.com/v1/me`, { headers: header })
+        return fetch('https://api.spotify.com/v1/me', { headers: header })
             .then((response) => response.json())
             .then((jsonResponse) => {
                 userId = jsonResponse.id
@@ -78,6 +80,7 @@ const Spotify = {
                     })
                 });
             });
+        };
     },
 }; // Spotify Initializer
 

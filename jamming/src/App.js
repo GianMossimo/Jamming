@@ -37,12 +37,16 @@ export default function App() {
     setPlaylistName(name);
   }
 
-  function savePlaylist() {
-    Spotify.savePlaylist(playlistName, TrackURIs).then((t) => {
+  function savePlaylist(trackUris) {
+    const TrackURIs = playlistTracks?.map((track) => track.uri);
+    return Spotify.savePlaylist(playlistName, TrackURIs)
+      .then(() => {
       setPlaylistName('New Playlist')
-      setPlaylistTracks([])
-    });
-    const TrackURIs = playlistTracks.map((track) => track.uri);
+      setPlaylistTracks([]) 
+    })
+    .catch((error) => {
+      alert(error);
+    })
   }
 
   function search(term) {
