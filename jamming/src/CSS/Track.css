@@ -9,16 +9,24 @@
     text-shadow: 0 0 20px #D52685;
 }
 
-.album {
+.artist {
     color: #27C5D6 ;
     font-size: 1.5rem;
     text-shadow: 0 0 10px #27C5D6;
-    font-size: 1.2rem;    
+    font-size: 1.3rem;    
+}
+
+.album {
+    color: #FFF ;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #FFF;
+    font-size: 1.1rem;    
 }
 
 .plus-minus {
     background-color: transparent;
     border: none;
+    margin: 3rem;
     color: #D52685;
     font-size: 2rem;
     cursor: pointer;
