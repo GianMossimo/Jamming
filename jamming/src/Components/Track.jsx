@@ -32,12 +32,15 @@ export default function Track(props) {
 
     return (
         <div className="track">
+            <div>
+                <img 
+                        className = "image"
+                        src={props.track.art}
+                />
+            </div>
             <div className="track-info">
                 <h3 className="song">{props.track.name}</h3>
-                <div className = "info">
-                    <p className = "artist">{props.track.artist}</p>
-                    <p className = "album">{props.track.album}</p>
-                </div>
+                <p className = "artist">{props.track.artist} | {props.track.album}</p>
             </div>
             {renderAction()}
         </div>

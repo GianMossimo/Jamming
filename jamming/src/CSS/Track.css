@@ -11,16 +11,8 @@
 
 .artist {
     color: #27C5D6 ;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     text-shadow: 0 0 10px #27C5D6;
-    font-size: 1.3rem;    
-}
-
-.album {
-    color: #FFF ;
-    font-size: 1.5rem;
-    text-shadow: 0 0 5px #FFF;
-    font-size: 1.1rem;    
 }
 
 .plus-minus {
@@ -37,4 +29,9 @@
     text-shadow: 0 0 5px #D52685,
                 0 0 10px #D52685,
                 0 0 20px #D52685;
+}
+
+.image {
+    height: 10rem;
+    margin: 1rem;
 }

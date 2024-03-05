@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 // Component Imports
 import SearchBar from './Components/SearchBar';
@@ -14,7 +14,7 @@ export default function App() {
   const [searchResults, setSearchResults] = useState();
 
   // For Playlist
-  const [playlistName, setPlaylistName] = useState('Example Playlist Name');
+  const [playlistName, setPlaylistName] = useState('Jammming Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   function addTrack(track) {
@@ -38,13 +38,13 @@ export default function App() {
     setPlaylistName(name);
   }
 
-  function savePlaylist() {
-    const trackURIs = playlistTracks?.map((t) => t.uri);
+  const savePlaylist = useCallback(() => {
+    const trackURIs = playlistTracks?.map((track) => track.uri);
     Spotify.savePlaylist(playlistName, trackURIs).then(() => {
       updatePlaylistName('New Playlist');
       setPlaylistTracks([]);
-    })
-  }
+    });
+  }, [playlistName, playlistTracks]);
 
   function search(term) {
     Spotify.search(term).then((result) => setSearchResults(result));
