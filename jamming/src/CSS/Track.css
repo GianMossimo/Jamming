@@ -34,4 +34,5 @@
 .image {
     height: 10rem;
     margin: 1rem;
+    border-radius: 4%;
 }
