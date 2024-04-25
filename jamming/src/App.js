@@ -11,23 +11,21 @@ import { Spotify } from './Spotify API/Spotify';
 export default function App() {
 
   // For Search Results
-  const [searchResults, setSearchResults] = useState();
+  const [searchResults, setSearchResults] = useState([]);
 
   // For Playlist
   const [playlistName, setPlaylistName] = useState('Jammming Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
-  function addTrack(track) {
+  const addTrack = useCallback(
+    (track) => {
+      if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
+        return;
 
-    const existingTrack = playlistTracks.find((t) => t.id === track.id);
-    const newTrack = playlistTracks.concat(track);
-
-    if (existingTrack) {
-      console.log('Song is already in playlist');
-    } else {
-      setPlaylistTracks(newTrack);
-    }
-  }
+      setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+    },
+    [playlistTracks]
+  );
 
   function removeTrack(track) {
     const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
@@ -39,7 +37,7 @@ export default function App() {
   }
 
   const savePlaylist = useCallback(() => {
-    const trackURIs = playlistTracks?.map((track) => track.uri);
+    const trackURIs = playlistTracks.map((track) => track.uri);
     Spotify.savePlaylist(playlistName, trackURIs).then(() => {
       updatePlaylistName('New Playlist');
       setPlaylistTracks([]);

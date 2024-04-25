@@ -51,7 +51,7 @@ const Spotify = {
     }, // getAccessToken function
 
     savePlaylist(name, trackUris) {
-        if (!name || !trackUris) {
+        if (!name || !trackUris.length) {
             return;
         }
 
@@ -73,7 +73,7 @@ const Spotify = {
                     const playlistId = jsonResponse.id;
                     return fetch(`https://api.spotify.com/v1/users/${userId}playlists/${playlistId}/tracks`,  {
                         headers: header,
-                        method: 'post',
+                        method: 'POST',
                         body: JSON.stringify({ uris: trackUris }),
                     })
                 });

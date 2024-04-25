@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styles from '../CSS/Playlist.css';
 import Tracklist from "./Tracklist";
 
 export default function Playlist(props) {
 
-    function handleNameChange({ target }) {
-        props.onNameChange(target.value);
-    }
+    const handleNameChange = useCallback(
+        (event) => {
+            props.onNameChange(event.target.value);
+        },
+        [props.onNameChange]
+    );
 
     return (
         <div className="playlist">
             <input 
                 className="playlist-input"
                 placeholder = "Enter Playlist Name"
-                onNameChange = {handleNameChange}
+                onChange = {handleNameChange}
             />
             <button 
                 className = "playlist-button"
